@@ -30,9 +30,9 @@ public class HelperScript : MonoBehaviour
     {
         //Raycasting
         Color hitColor = Color.blue;
-        float laserLength = 10f;
+        float laserLength = 0.1f;
         //Makes 3 lines directly beneath the player to register the floor
-        Vector3 rayOffset = new Vector3(0, -0.21f, 0);
+        Vector3 rayOffset = new Vector3(0, -0.51f, 0);
         RaycastHit2D hit = Physics2D.Raycast(transform.position + rayOffset, Vector2.down, laserLength, groundLayerMask);
 
         //If any of the lines are touching the ground then the player can jump.

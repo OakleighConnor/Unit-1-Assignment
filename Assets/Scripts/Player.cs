@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
+    LayerMask groundLayerMask;
     public bool isGrounded = false;
     float speed = 5f;
     HelperScript helper;
@@ -18,18 +18,20 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spi = GetComponent<SpriteRenderer>();
         helper = gameObject.AddComponent<HelperScript>();
+        groundLayerMask = LayerMask.GetMask("Ground");
     }
 
     // Update is called once per frame
     void Update()
     {
         Movement();
+        isGrounded = helper.GroundCheck(isGrounded);
     }
 
     private void Movement()
     {
         //Jump
-        if ((Input.GetKeyDown("w") == true) && (helper.GroundCheck(isGrounded) == true))
+        if ((Input.GetKeyDown("w") == true) && (isGrounded == true))
         {
             rb.AddForce(new Vector3(0, 8, 0), ForceMode2D.Impulse);
         }

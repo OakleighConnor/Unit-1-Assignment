@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 1920
+    x: 0
     y: 43
     width: 1920
     height: 997
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 103
+  controlID: 89
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -297,7 +297,7 @@ MonoBehaviour:
     m_TextWithWhitespace: "Project\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1920
+    x: 0
     y: 634
     width: 1465
     height: 365
@@ -335,14 +335,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scripts
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\539711\Unit 1 Assignment
+  m_LastProjectPath: C:\temp\UnityProjects\Unit-1-Assignment
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 9c7a0000
-    m_LastClickedID: 31388
-    m_ExpandedIDs: 000000003c64000000ca9a3bffffff7f
+    m_SelectedIDs: e0430000
+    m_LastClickedID: 17376
+    m_ExpandedIDs: 00000000e0420000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -447,7 +447,7 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 3386
+    x: 1466
     y: 73
     width: 453
     height: 926
@@ -496,7 +496,7 @@ MonoBehaviour:
     m_TextWithWhitespace: "Hierarchy\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1920
+    x: 0
     y: 73
     width: 362
     height: 540
@@ -514,9 +514,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: b8c9ffff
-      m_LastClickedID: -13896
-      m_ExpandedIDs: f8f8ffff
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: aecbfeffeaccfeff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -561,7 +561,7 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 2283
+    x: 363
     y: 73
     width: 1101
     height: 540
@@ -975,8 +975,8 @@ MonoBehaviour:
       id: UnityEditor.SceneViewCameraOverlay
       index: 14
       layout: 4
-      size: {x: 40, y: 40}
-      sizeOverridden: 0
+      size: {x: 240, y: 135}
+      sizeOverridden: 1
     m_ContainerData:
     - containerId: overlay-toolbar__top
       scrollOffset: 0
@@ -1003,9 +1003,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.3961612, y: -0.47781593, z: -4.4168777}
+    m_Target: {x: 0.60250837, y: -1.1106242, z: -4.4231176}
     speed: 2
-    m_Value: {x: 0.44370726, y: -0.44838914, z: -4.417578}
+    m_Value: {x: 0.6263042, y: -1.0630325, z: -4.424112}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1055,9 +1055,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1.4860839
+    m_Target: 2.110328
     speed: 2
-    m_Value: 1.5561087
+    m_Value: 2.2097676
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1103,7 +1103,7 @@ MonoBehaviour:
     m_TextWithWhitespace: "Game\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 2283
+    x: 363
     y: 73
     width: 1101
     height: 540
