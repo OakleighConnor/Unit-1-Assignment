@@ -50,3 +50,4 @@ public class HelperScript : MonoBehaviour
         Debug.DrawRay(transform.position + rayOffset, Vector2.down * laserLength, hitColor);
         return isGrounded;
     }
+}

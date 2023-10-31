@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float _rotateSpeed;
     [SerializeField] GameObject _aimCursor;
     [SerializeField] private LineRenderer lr;
+    public GameObject AimCursor;
     Vector3 _startPos;
     Vector3 _endPos;
     Vector3 _mousePos;
@@ -25,16 +26,18 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Shoot();
+        //Shoot();
         AimMouse();
         AimLine();
     }
 
-    void Shoot()
+    /*void Shoot()
     {
         int moveDirection = 1;
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
+
+            
             // Instantiate the bullet at the position and rotation of the player
             GameObject clone;
             clone = Instantiate(weapon, transform.position, transform.rotation);
@@ -48,7 +51,7 @@ public class Weapon : MonoBehaviour
             rb.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 1);
 
         }
-    }
+    }*/
     void AimMouse()
     {
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
