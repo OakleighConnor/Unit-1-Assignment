@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
     LayerMask groundLayerMask;
     public bool isGrounded = false;
     float speed = 5f;
@@ -28,7 +29,7 @@ public class Player : MonoBehaviour
         isGrounded = helper.GroundCheck(isGrounded);
     }
 
-    private void Movement()
+    void Movement()
     {
         //Jump
         if ((Input.GetKeyDown("w") == true) && (isGrounded == true))

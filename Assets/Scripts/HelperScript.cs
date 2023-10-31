@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class HelperScript : MonoBehaviour
 {
+
     LayerMask groundLayerMask;
     // Start is called before the first frame update
     void Start()
@@ -48,4 +50,3 @@ public class HelperScript : MonoBehaviour
         Debug.DrawRay(transform.position + rayOffset, Vector2.down * laserLength, hitColor);
         return isGrounded;
     }
-}
