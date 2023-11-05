@@ -15,8 +15,6 @@ public class Weapon : MonoBehaviour
     Vector3 _mouseDir;
     float _lineMax = 5;
 
-    public GameObject weapon;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -26,32 +24,11 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Shoot();
         AimMouse();
-        AimLine();
+        //AimLine();
     }
 
-    /*void Shoot()
-    {
-        int moveDirection = 1;
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
 
-            
-            // Instantiate the bullet at the position and rotation of the player
-            GameObject clone;
-            clone = Instantiate(weapon, transform.position, transform.rotation);
-            // get the rigidbody component
-            Rigidbody2D rb = clone.GetComponent<Rigidbody2D>();
-
-            // set the velocity
-            rb.velocity = new Vector3(15 * moveDirection, 0, 0);
-
-            // set the position close to the player
-            rb.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 1);
-
-        }
-    }*/
     void AimMouse()
     {
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;

@@ -2,40 +2,56 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shoot : MonoBehaviour
+public class ShootScript : MonoBehaviour
 {
-    public GameObject weapon;
+    public Transform Gun;
+
+    Vector2 direction;
+
+    public GameObject Bullet;
+
+    public float BulletSpeed;
+
+    public Transform ShootPoint;
+
+    public float fireRate;
+
+    float ReadyForNextShot;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Shooting();
-    }
-    void Shooting()
-    {
-        int moveDirection = 1;
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        direction = mousePos - (Vector2)Gun.position;
+        FaceMouse();
+
+        //Shooting Script
+        if (Input.GetMouseButtonDown(0))
         {
-
-
-            // Instantiate the bullet at the position and rotation of the player
-            GameObject clone;
-            clone = Instantiate(weapon, transform.position, transform.rotation);
-            // get the rigidbody component
-            Rigidbody2D rb = clone.GetComponent<Rigidbody2D>();
-
-            // set the velocity
-            rb.velocity = new Vector3(15 * moveDirection, 0, 0);
-
-            // set the position close to the player
-            rb.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 1);
-
+            if (Time.time > ReadyForNextShot)
+            {
+                ReadyForNextShot = Time.time + 1 / fireRate;
+                shoot();
+            }
         }
+
+    }
+
+    void FaceMouse() //Pointing Gun Towards Cursor
+    {
+        Gun.transform.right = direction;
+    }
+
+    void shoot() //Shooting
+    {
+        GameObject BulletIns = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
+        BulletIns.GetComponent<Rigidbody2D>().AddForce(BulletIns.transform.right * BulletSpeed);
+        Destroy(BulletIns, 3);
     }
 }
-

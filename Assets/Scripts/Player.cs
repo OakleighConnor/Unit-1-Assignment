@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
         //Jump
         if ((Input.GetKeyDown("w") == true) && (isGrounded == true))
         {
-            rb.AddForce(new Vector3(0, 8, 0), ForceMode2D.Impulse);
+            rb.AddForce(new Vector3(0, 16, 0), ForceMode2D.Impulse);
         }
 
         //Grounded Movement
