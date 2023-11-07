@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class HelperScript : MonoBehaviour
 {
-
+    SpriteRenderer sr;
     LayerMask groundLayerMask;
     // Start is called before the first frame update
     void Start()
