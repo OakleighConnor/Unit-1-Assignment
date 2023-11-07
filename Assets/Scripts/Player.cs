@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     HelperScript helper;
     SpriteRenderer spi;
     Rigidbody2D rb;
+    int health;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,7 @@ public class Player : MonoBehaviour
         //Jump
         if ((Input.GetKeyDown("w") == true) && (isGrounded == true))
         {
-            rb.AddForce(new Vector3(0, 16, 0), ForceMode2D.Impulse);
+            rb.AddForce(new Vector3(0, 21, 0), ForceMode2D.Impulse);
         }
 
         //Grounded Movement
@@ -45,6 +46,14 @@ public class Player : MonoBehaviour
         if (Input.GetKey("d") == true)
         {
             transform.position = new Vector2(transform.position.x + (speed * Time.deltaTime), transform.position.y);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (CompareTag("enemy"))
+        {
+            health = health - 1;
         }
     }
 }

@@ -36,7 +36,7 @@ public class ShootScript : MonoBehaviour
         {
             if (Time.time > ReadyForNextShot)
             {
-                ReadyForNextShot = Time.time + 1 / fireRate;
+                ReadyForNextShot = Time.time + 0.5f / fireRate;
                 shoot();
             }
         }
