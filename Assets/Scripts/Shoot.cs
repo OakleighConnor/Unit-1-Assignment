@@ -18,10 +18,16 @@ public class ShootScript : MonoBehaviour
 
     float ReadyForNextShot;
 
+    public GameObject Player;
+    Player deathCheck;
+
+    //Sounds
+    [SerializeField] private AudioSource shootSFX;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        deathCheck = Player.GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -31,13 +37,16 @@ public class ShootScript : MonoBehaviour
         direction = mousePos - (Vector2)Gun.position;
         FaceMouse();
 
-        //Shooting Script
-        if (Input.GetMouseButtonDown(0))
+        //Shooting Script. Only activates if the player isn't dead (obviously)
+        if (!deathCheck.dead)
         {
-            if (Time.time > ReadyForNextShot)
+            if (Input.GetMouseButtonDown(0))
             {
-                ReadyForNextShot = Time.time + 0.5f / fireRate;
-                shoot();
+                if (Time.time > ReadyForNextShot)
+                {
+                    ReadyForNextShot = Time.time + 0.2f / fireRate;
+                    shoot();
+                }
             }
         }
 
@@ -50,6 +59,7 @@ public class ShootScript : MonoBehaviour
 
     void shoot() //Shooting
     {
+        shootSFX.Play();
         GameObject BulletIns = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
         BulletIns.GetComponent<Rigidbody2D>().AddForce(BulletIns.transform.right * BulletSpeed);
         Destroy(BulletIns, 3);
