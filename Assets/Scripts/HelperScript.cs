@@ -55,8 +55,8 @@ public class HelperScript : MonoBehaviour
         float laserLength = 0.1f;
         //Makes 3 lines directly beneath the player to register the floor
         Vector3 rayOffset = new Vector3(0, -0.85f, 0);
-        Vector3 rayOffset2 = new Vector3(-0.21f, -0.85f, 0);
-        Vector3 rayOffset3 = new Vector3(0.21f, -0.85f, 0);
+        Vector3 rayOffset2 = new Vector3(-0.10f, -0.85f, 0);
+        Vector3 rayOffset3 = new Vector3(0.10f, -0.85f, 0);
         RaycastHit2D hit = Physics2D.Raycast(transform.position + rayOffset, Vector2.down, laserLength, groundLayerMask);
         RaycastHit2D hit2 = Physics2D.Raycast(transform.position + rayOffset2, Vector2.down, laserLength, groundLayerMask);
         RaycastHit2D hit3 = Physics2D.Raycast(transform.position + rayOffset3, Vector2.down, laserLength, groundLayerMask);

@@ -101,7 +101,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 5
   timer: 0
-  hit: {fileID: 0}
 --- !u!50 &7251987051776114299
 Rigidbody2D:
   serializedVersion: 4
