@@ -69,6 +69,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isGrounded = helper.GroundCheck(isGrounded);
         //Methods inside this script
         //Make sure AnimationReset is above Movement else animations break
         AnimationReset();
@@ -166,12 +167,26 @@ public class Player : MonoBehaviour
         //Grounded movement left and right
         if (Input.GetKey("a") == true)
         {
-            anim.SetBool("walking", true);
+            if (isGrounded)
+            {
+                anim.SetBool("walking", true);
+            }
+            else
+            {
+                anim.SetBool("walking", false);
+            }
             transform.position = new Vector2(transform.position.x + (-speed * Time.deltaTime), transform.position.y);
         }
         if (Input.GetKey("d") == true)
         {
-            anim.SetBool("walking", true);
+            if (isGrounded)
+            {
+                anim.SetBool("walking", true);
+            }
+            else
+            {
+                anim.SetBool("walking", false);
+            }
             transform.position = new Vector2(transform.position.x + (speed * Time.deltaTime), transform.position.y);
         }
     }
